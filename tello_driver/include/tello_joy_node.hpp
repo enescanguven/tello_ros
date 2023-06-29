@@ -17,6 +17,7 @@ namespace tello_joy
   constexpr int JOY_AXIS_RIGHT_FB = 4;      // Right stick forward/back; 1.0 is forward and -1.0 is back
   constexpr int JOY_BUTTON_VIEW = 6;        // View button
   constexpr int JOY_BUTTON_MENU = 7;        // Menu button
+  constexpr int JOY_BUTTON_AUTO = 8;       // Auto mode button
 
   class TelloJoyNode : public rclcpp::Node
   {
@@ -41,6 +42,7 @@ namespace tello_joy
     const int joy_axis_yaw_ = JOY_AXIS_LEFT_LR;
     const int joy_button_takeoff_ = JOY_BUTTON_MENU;
     const int joy_button_land_ = JOY_BUTTON_VIEW;
+    const int joy_button_auto_ = JOY_BUTTON_AUTO;
   };
 
 } // namespace tello_joy

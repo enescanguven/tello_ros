@@ -34,7 +34,10 @@ namespace tello_joy
       auto request = std::make_shared<tello_msgs::srv::TelloAction::Request>();
       request->cmd = "land";
       tello_client_->async_send_request(request);
-    } else {
+    } else if (joy_msg->buttons[joy_button_auto_]){
+      geometry_msgs::msg::Twist twist_msg;
+    }
+    else {
       geometry_msgs::msg::Twist twist_msg;
       twist_msg.linear.x = joy_msg->axes[joy_axis_throttle_];
       twist_msg.linear.y = joy_msg->axes[joy_axis_strafe_];
